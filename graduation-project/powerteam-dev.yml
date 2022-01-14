@@ -1,0 +1,48 @@
+#端口号
+server:
+  port: 9002
+spring:
+  #数据源配置
+  datasource:
+    #驱动
+    driver-class-name: com.mysql.jdbc.Driver
+    #连接池
+    type: com.zaxxer.hikari.HikariDataSource
+    #连接名
+    poolName: PowerTeamPool
+    #数据库地址
+    url: jdbc:mysql://jming956.cn:36601/bishe_dbs?useSSL=false&useUnicode=yes&characterEncoding=UTF8
+    #连接用户
+    username: jming
+    #密码
+    password: jming
+
+  #静态资源缓存时间
+  resources:
+    cache-period: 31536000
+
+  profiles:
+    include: powerteam
+
+  # 时间格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+#mybatis配置
+mybatis:
+  config-location : classpath:mybatis-config.xml
+
+#日志配置
+logging:
+  level.com.powerteam: DEBUG
+
+powerTeam:
+  #系统标题
+  title: PowerTeam
+
+  #页大小
+  pageSize: 15
+
+  #百度地图ak
+  baiduMapAk: G2zm7GgGGesyLUEoUfVF2jheDGRrkecU
